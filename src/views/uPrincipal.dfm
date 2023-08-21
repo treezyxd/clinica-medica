@@ -1,7 +1,7 @@
-object Form1: TForm1
+object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'frmPrincipal'
   ClientHeight = 743
   ClientWidth = 960
   Color = clBtnFace
@@ -763,7 +763,7 @@ object Form1: TForm1
       ParentBackground = False
       TabOrder = 0
       ExplicitWidth = 680
-      object BitBtn1: TBitBtn
+      object btnAgendamentos: TBitBtn
         AlignWithMargins = True
         Left = 109
         Top = 1
@@ -773,7 +773,7 @@ object Form1: TForm1
         Margins.Right = 0
         Margins.Bottom = 0
         Align = alLeft
-        Caption = 'Agendamento'
+        Caption = 'Agendamentos'
         Glyph.Data = {
           361B0000424D361B000000000000360000002800000030000000300000000100
           180000000000001B000074120000741200000000000000000000FFFFFFFFFFFF
@@ -995,17 +995,19 @@ object Form1: TForm1
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
         Layout = blGlyphTop
         TabOrder = 0
+        OnClick = btnAgendamentosClick
         ExplicitLeft = 108
         ExplicitTop = 3
         ExplicitHeight = 102
       end
-      object BitBtn2: TBitBtn
+      object btnPacientes: TBitBtn
         Left = 1
         Top = 1
         Width = 105
         Height = 103
         Align = alLeft
         Caption = 'Pacientes'
+        DisabledImageName = 'btnPacientes'
         Glyph.Data = {
           361B0000424D361B000000000000360000002800000030000000300000000100
           180000000000001B000074120000741200000000000000000000FFFFFFFFFFFF
@@ -1227,6 +1229,7 @@ object Form1: TForm1
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
         Layout = blGlyphTop
         TabOrder = 1
+        OnClick = btnPacientesClick
         ExplicitLeft = 8
         ExplicitTop = 0
         ExplicitHeight = 89
@@ -1235,20 +1238,23 @@ object Form1: TForm1
   end
   object MainMenu1: TMainMenu
     Left = 384
-    Top = 208
-    object Sistema1: TMenuItem
+    Top = 152
+    object Sistema: TMenuItem
       Caption = 'Sistema'
-      object Sistema2: TMenuItem
+      object Sair: TMenuItem
         Caption = 'Sair'
+        OnClick = SairClick
       end
     end
-    object Cadastros1: TMenuItem
+    object Cadastros: TMenuItem
       Caption = 'Cadastros'
-      object Cadastros2: TMenuItem
+      object Pacientes: TMenuItem
         Caption = 'Pacientes'
+        OnClick = PacientesClick
       end
-      object Agendamentos1: TMenuItem
+      object Agendamentos: TMenuItem
         Caption = 'Agendamentos'
+        OnClick = AgendamentosClick
       end
     end
   end

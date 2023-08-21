@@ -1,0 +1,56 @@
+unit uPrincipal;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.StdCtrls, Vcl.Buttons,
+  Vcl.ExtCtrls, Vcl.Imaging.jpeg;
+
+type
+  TfrmPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    Sistema: TMenuItem;
+    Sair: TMenuItem;
+    Cadastros: TMenuItem;
+    Pacientes: TMenuItem;
+    Agendamentos: TMenuItem;
+    pnlBackground: TPanel;
+    pnlTop: TPanel;
+    BitBtn1: TBitBtn;
+    BitBtn2: TBitBtn;
+    imgBackground: TImage;
+    procedure SairClick(Sender: TObject);
+    procedure PacientesClick(Sender: TObject);
+    procedure AgendamentosClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+uses uCadPacientes;
+
+procedure TfrmPrincipal.AgendamentosClick(Sender: TObject);
+begin
+  frmCadAgendamentos.ShowModal;
+end;
+
+procedure TfrmPrincipal.PacientesClick(Sender: TObject);
+begin
+  frmCadPacientes.ShowModal;
+end;
+
+procedure TfrmPrincipal.SairClick(Sender: TObject);
+begin
+  Self.Close;
+end;
+
+end.
